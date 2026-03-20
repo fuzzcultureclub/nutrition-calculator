@@ -169,12 +169,12 @@
             const logoSize = 100;
             ctx.save(); ctx.beginPath(); ctx.arc(cx, yPos + logoSize/2, logoSize/2, 0, Math.PI*2);
             ctx.closePath(); ctx.clip(); ctx.drawImage(logoImg, cx - logoSize/2, yPos, logoSize, logoSize); ctx.restore();
-            yPos += logoSize + 30;
+            yPos += logoSize + 60;
           }
         } catch(e) { yPos = 100; }
 
-        drawText("INCLUSIVE CALORIE &",  cx, yPos,      { font: "700 52px 'Varet Gothic', Oswald, sans-serif", color: "#ffcd68" }); yPos += 58;
-        drawText("PROTEIN CALCULATOR",   cx, yPos,      { font: "700 52px 'Varet Gothic', Oswald, sans-serif", color: "#BF994C" }); yPos += 60;
+        drawText("INCLUSIVE CALORIE &",  cx, yPos,      { font: "700 52px 'Varet Gothic', Oswald, sans-serif", color: "#ffcd68" }); yPos += 62;
+        drawText("PROTEIN CALCULATOR",   cx, yPos,      { font: "700 52px 'Varet Gothic', Oswald, sans-serif", color: "#BF994C" }); yPos += 62;
 
         ctx.strokeStyle = "rgba(191,153,76,0.3)"; ctx.lineWidth = 1;
         ctx.beginPath(); ctx.moveTo(cx-200, yPos); ctx.lineTo(cx+200, yPos); ctx.stroke(); yPos += 50;
@@ -198,18 +198,18 @@
         drawText("calories at rest",     50+boxW/2,         yPos+110, { font: "400 20px Lato, sans-serif",   color: "#888" });
         drawText("TDEE",                 50+boxW+20+boxW/2, yPos+35,  { font: "700 20px Lato, sans-serif",   color: "#fff" });
         drawText(results.tdee.toLocaleString(), 50+boxW+20+boxW/2, yPos+80,  { font: "700 48px 'Varet Gothic', Oswald, sans-serif", color: "#ffcd68" });
-        drawText("maintenance calories", 50+boxW+20+boxW/2, yPos+110, { font: "400 20px Lato, sans-serif",   color: "#888" }); yPos += 170;
+        drawText("maintenance calories", 50+boxW+20+boxW/2, yPos+110, { font: "400 20px Lato, sans-serif",   color: "#888" }); yPos += 150;
 
         drawRoundedRect(50, yPos, w-100, 200, 16, results.goalColor+"18", results.goalColor+"35");
         drawText("DAILY CALORIES", cx, yPos+45,  { font: "700 22px Lato, sans-serif",   color: "#fff" });
         drawText(results.minCals.toLocaleString()+" – "+results.maxCals.toLocaleString(), cx, yPos+115, { font: "700 72px 'Varet Gothic', Oswald, sans-serif", color: results.goalColor });
-        drawText("calories per day", cx, yPos+155, { font: "400 24px Lato, sans-serif", color: "#888" }); yPos += 240;
+        drawText("calories per day", cx, yPos+155, { font: "400 24px Lato, sans-serif", color: "#888" }); yPos += 216;
 
         drawRoundedRect(50, yPos, w-100, 240, 16, "rgba(191,153,76,0.1)", "rgba(191,153,76,0.25)");
         drawText("DAILY PROTEIN",  cx, yPos+45,  { font: "700 22px Lato, sans-serif",   color: "#fff" });
         drawText(results.proteinMinG+" – "+results.proteinMaxG, cx, yPos+115, { font: "700 72px 'Varet Gothic', Oswald, sans-serif", color: "#ffcd68" });
         drawText("grams per day",  cx, yPos+155, { font: "400 24px Lato, sans-serif",   color: "#888" });
-        drawText("Based on 1.2–1.6g per kg of bodyweight ("+results.weightKg+"kg)", cx, yPos+200, { font: "400 20px Lato, sans-serif", color: "#888" }); yPos += 280;
+        drawText("Based on 1.2–1.6g per kg of bodyweight ("+results.weightKg+"kg)", cx, yPos+200, { font: "400 20px Lato, sans-serif", color: "#888" }); yPos += 250;
 
         if (results.showAltProtein) {
           drawRoundedRect(50, yPos, w-100, 100, 16, "rgba(191,153,76,0.06)", "rgba(191,153,76,0.15)");
@@ -229,16 +229,20 @@
           }
           ctx.fillText(line1, cx, yPos+38); ctx.fillText(line2, cx, yPos+64);
         } else { ctx.fillText(tipText, cx, yPos+52); }
-        yPos += 130;
+        yPos += 110;
 
         drawText("CARBS & FATS", cx, yPos, { font: "700 22px Lato, sans-serif", color: "#e2e8f0" }); yPos += 34;
         ctx.font = "400 20px Lato, sans-serif"; ctx.fillStyle = "#888";
         ctx.fillText("Fill your remaining calories however you like.", cx, yPos);
-        ctx.fillText("No rigid split required.", cx, yPos+28); yPos += 90;
+        ctx.fillText("No rigid split required.", cx, yPos+28); yPos += 70;
 
+        // ── Footer: divider + branding + social ──────────────────────────
         ctx.strokeStyle = "rgba(191,153,76,0.3)"; ctx.lineWidth = 1;
-        ctx.beginPath(); ctx.moveTo(cx-200, h-120); ctx.lineTo(cx+200, h-120); ctx.stroke();
-        drawText("INCLUSIVE CALORIE & PROTEIN CALCULATOR", cx, h-70, { font: "700 22px 'Varet Gothic', Oswald, sans-serif", color: "#BF994C" });
+        ctx.beginPath(); ctx.moveTo(cx-220, yPos); ctx.lineTo(cx+220, yPos); ctx.stroke(); yPos += 40;
+
+        drawText("INCLUSIVE CALORIE & PROTEIN CALCULATOR", cx, yPos, { font: "700 20px 'Varet Gothic', Oswald, sans-serif", color: "#BF994C" }); yPos += 36;
+        drawText("@lucinda_fuzzcultureclub", cx, yPos, { font: "400 22px Lato, sans-serif", color: "#ffcd68" }); yPos += 34;
+        drawText("fuzzcultureclub.com", cx, yPos, { font: "400 22px Lato, sans-serif", color: "#888" });
 
         const link = document.createElement("a");
         link.download = "my-nutrition-targets.png"; link.href = canvas.toDataURL("image/png"); link.click();
