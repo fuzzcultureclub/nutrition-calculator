@@ -148,7 +148,7 @@
         bg.addColorStop(0, "#1a1a1b"); bg.addColorStop(0.5, "#222323"); bg.addColorStop(1, "#1a1a1b");
         ctx.fillStyle = bg; ctx.fillRect(0, 0, w, h);
 
-        const drawText = (text, x, y, { font = "400 28px Oswald, sans-serif", color = "#e2e8f0", align = "center" } = {}) => {
+        const drawText = (text, x, y, { font = "400 28px 'Varet Gothic', Oswald, sans-serif", color = "#e2e8f0", align = "center" } = {}) => {
           ctx.font = font; ctx.fillStyle = color; ctx.textAlign = align; ctx.fillText(text, x, y);
         };
         const drawRoundedRect = (x, y, rw, rh, r, fill, stroke) => {
@@ -173,8 +173,8 @@
           }
         } catch(e) { yPos = 100; }
 
-        drawText("INCLUSIVE CALORIE &",  cx, yPos,      { font: "700 52px Oswald, sans-serif", color: "#ffcd68" }); yPos += 58;
-        drawText("PROTEIN CALCULATOR",   cx, yPos,      { font: "700 52px Oswald, sans-serif", color: "#BF994C" }); yPos += 60;
+        drawText("INCLUSIVE CALORIE &",  cx, yPos,      { font: "700 52px 'Varet Gothic', Oswald, sans-serif", color: "#ffcd68" }); yPos += 58;
+        drawText("PROTEIN CALCULATOR",   cx, yPos,      { font: "700 52px 'Varet Gothic', Oswald, sans-serif", color: "#BF994C" }); yPos += 60;
 
         ctx.strokeStyle = "rgba(191,153,76,0.3)"; ctx.lineWidth = 1;
         ctx.beginPath(); ctx.moveTo(cx-200, yPos); ctx.lineTo(cx+200, yPos); ctx.stroke(); yPos += 50;
@@ -187,27 +187,27 @@
         const colW = w/3;
         summaryItems.forEach(([label, val, color], i) => {
           drawText(label, colW*i+colW/2, yPos,    { font: "700 22px Lato, sans-serif", color: "#888" });
-          drawText(val,   colW*i+colW/2, yPos+36, { font: "700 30px Oswald, sans-serif", color });
+          drawText(val,   colW*i+colW/2, yPos+36, { font: "700 30px 'Varet Gothic', Oswald, sans-serif", color });
         }); yPos += 90;
 
         const boxW = (w-120)/2;
         drawRoundedRect(50,         yPos, boxW, 130, 16, "rgba(255,255,255,0.04)", "rgba(255,255,255,0.08)");
         drawRoundedRect(50+boxW+20, yPos, boxW, 130, 16, "rgba(255,255,255,0.04)", "rgba(255,255,255,0.08)");
         drawText("BMR",                  50+boxW/2,         yPos+35,  { font: "700 20px Lato, sans-serif",   color: "#fff" });
-        drawText(results.bmr.toLocaleString(), 50+boxW/2,   yPos+80,  { font: "700 48px Oswald, sans-serif", color: "#e2e8f0" });
+        drawText(results.bmr.toLocaleString(), 50+boxW/2,   yPos+80,  { font: "700 48px 'Varet Gothic', Oswald, sans-serif", color: "#e2e8f0" });
         drawText("calories at rest",     50+boxW/2,         yPos+110, { font: "400 20px Lato, sans-serif",   color: "#888" });
         drawText("TDEE",                 50+boxW+20+boxW/2, yPos+35,  { font: "700 20px Lato, sans-serif",   color: "#fff" });
-        drawText(results.tdee.toLocaleString(), 50+boxW+20+boxW/2, yPos+80,  { font: "700 48px Oswald, sans-serif", color: "#ffcd68" });
+        drawText(results.tdee.toLocaleString(), 50+boxW+20+boxW/2, yPos+80,  { font: "700 48px 'Varet Gothic', Oswald, sans-serif", color: "#ffcd68" });
         drawText("maintenance calories", 50+boxW+20+boxW/2, yPos+110, { font: "400 20px Lato, sans-serif",   color: "#888" }); yPos += 170;
 
         drawRoundedRect(50, yPos, w-100, 200, 16, results.goalColor+"18", results.goalColor+"35");
         drawText("DAILY CALORIES", cx, yPos+45,  { font: "700 22px Lato, sans-serif",   color: "#fff" });
-        drawText(results.minCals.toLocaleString()+" – "+results.maxCals.toLocaleString(), cx, yPos+115, { font: "700 72px Oswald, sans-serif", color: results.goalColor });
+        drawText(results.minCals.toLocaleString()+" – "+results.maxCals.toLocaleString(), cx, yPos+115, { font: "700 72px 'Varet Gothic', Oswald, sans-serif", color: results.goalColor });
         drawText("calories per day", cx, yPos+155, { font: "400 24px Lato, sans-serif", color: "#888" }); yPos += 240;
 
         drawRoundedRect(50, yPos, w-100, 240, 16, "rgba(191,153,76,0.1)", "rgba(191,153,76,0.25)");
         drawText("DAILY PROTEIN",  cx, yPos+45,  { font: "700 22px Lato, sans-serif",   color: "#fff" });
-        drawText(results.proteinMinG+" – "+results.proteinMaxG, cx, yPos+115, { font: "700 72px Oswald, sans-serif", color: "#ffcd68" });
+        drawText(results.proteinMinG+" – "+results.proteinMaxG, cx, yPos+115, { font: "700 72px 'Varet Gothic', Oswald, sans-serif", color: "#ffcd68" });
         drawText("grams per day",  cx, yPos+155, { font: "400 24px Lato, sans-serif",   color: "#888" });
         drawText("Based on 1.2–1.6g per kg of bodyweight ("+results.weightKg+"kg)", cx, yPos+200, { font: "400 20px Lato, sans-serif", color: "#888" }); yPos += 280;
 
@@ -238,7 +238,7 @@
 
         ctx.strokeStyle = "rgba(191,153,76,0.3)"; ctx.lineWidth = 1;
         ctx.beginPath(); ctx.moveTo(cx-200, h-120); ctx.lineTo(cx+200, h-120); ctx.stroke();
-        drawText("INCLUSIVE CALORIE & PROTEIN CALCULATOR", cx, h-70, { font: "700 22px Oswald, sans-serif", color: "#BF994C" });
+        drawText("INCLUSIVE CALORIE & PROTEIN CALCULATOR", cx, h-70, { font: "700 22px 'Varet Gothic', Oswald, sans-serif", color: "#BF994C" });
 
         const link = document.createElement("a");
         link.download = "my-nutrition-targets.png"; link.href = canvas.toDataURL("image/png"); link.click();
@@ -273,7 +273,7 @@
                 <div style={{ width:6, height:6, borderRadius:"50%", background:"#ffcd68", boxShadow:"0 0 8px #ffcd68" }}/>
                 <span style={{ fontSize:12, color:"#ffcd68", fontWeight:700, letterSpacing:1 }}>FCC NUTRITION CALCULATOR</span>
               </div>
-              <h1 style={{ fontFamily:"'Oswald',sans-serif", fontSize:"clamp(26px,5vw,40px)", fontWeight:700, letterSpacing:"-1.5px", lineHeight:0.85, textTransform:"uppercase", background:"linear-gradient(135deg,#ffcd68,#BF994C)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", margin:0 }}>
+              <h1 style={{ fontFamily:"'Varet Gothic','Oswald',sans-serif", fontSize:"clamp(26px,5vw,40px)", fontWeight:700, letterSpacing:"-1.5px", lineHeight:0.85, textTransform:"uppercase", background:"linear-gradient(135deg,#ffcd68,#BF994C)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", margin:0 }}>
                 Inclusive Calorie &<br/>Protein Calculator
               </h1>
               <p style={{ color:"#888", marginTop:10, fontSize:16, fontWeight:700 }}>Personalised targets based on <span style={{ color:"#ffcd68", textDecoration:"underline", fontWeight:700 }}>your</span> body and goals.</p>
@@ -380,12 +380,12 @@
               <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:14, marginBottom:16 }}>
                 <div style={s.statBox}>
                   <div style={{ fontSize:12, color:"#ffffff", textTransform:"uppercase", letterSpacing:"1px", marginBottom:6 }}>BMR</div>
-                  <div style={{ fontSize:32, fontFamily:"'Oswald',sans-serif", fontWeight:700, color:"#e2e8f0", lineHeight:0.85, letterSpacing:"-1.5px" }}>{results.bmr.toLocaleString()}</div>
+                  <div style={{ fontSize:32, fontFamily:"'Varet Gothic','Oswald',sans-serif", fontWeight:700, color:"#e2e8f0", lineHeight:0.85, letterSpacing:"-1.5px" }}>{results.bmr.toLocaleString()}</div>
                   <div style={{ fontSize:12, color:"#888", marginTop:4 }}>calories at rest</div>
                 </div>
                 <div style={s.statBox}>
                   <div style={{ fontSize:12, color:"#ffffff", textTransform:"uppercase", letterSpacing:"1px", marginBottom:6 }}>TDEE</div>
-                  <div style={{ fontSize:32, fontFamily:"'Oswald',sans-serif", fontWeight:700, color:"#ffcd68", lineHeight:0.85, letterSpacing:"-1.5px" }}>{results.tdee.toLocaleString()}</div>
+                  <div style={{ fontSize:32, fontFamily:"'Varet Gothic','Oswald',sans-serif", fontWeight:700, color:"#ffcd68", lineHeight:0.85, letterSpacing:"-1.5px" }}>{results.tdee.toLocaleString()}</div>
                   <div style={{ fontSize:12, color:"#888", marginTop:4 }}>maintenance calories</div>
                 </div>
               </div>
@@ -395,7 +395,7 @@
                 <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start" }}>
                   <div>
                     <div style={{ fontSize:12, color:"#ffffff", textTransform:"uppercase", letterSpacing:"1px", marginBottom:6 }}>Daily Calories</div>
-                    <div style={{ fontSize:52, fontFamily:"'Oswald',sans-serif", fontWeight:700, color:results.goalColor, lineHeight:0.85, letterSpacing:"-2.5px" }}>{results.minCals.toLocaleString()}–{results.maxCals.toLocaleString()}</div>
+                    <div style={{ fontSize:52, fontFamily:"'Varet Gothic','Oswald',sans-serif", fontWeight:700, color:results.goalColor, lineHeight:0.85, letterSpacing:"-2.5px" }}>{results.minCals.toLocaleString()}–{results.maxCals.toLocaleString()}</div>
                     <div style={{ fontSize:13, color:"#888", marginTop:6 }}>calories per day</div>
                   </div>
                   <div style={{ background:results.goalColor+"22", color:results.goalColor, border:`1px solid ${results.goalColor}44`, borderRadius:6, padding:"3px 10px", fontSize:11, fontWeight:600, letterSpacing:"0.5px" }}>
@@ -408,8 +408,8 @@
               <div style={{ borderRadius:16, padding:24, background:"linear-gradient(135deg,rgba(191,153,76,0.1),rgba(255,255,255,0.02))", border:"1px solid rgba(191,153,76,0.25)", marginBottom:16 }}>
                 <div style={{ fontSize:12, color:"#ffffff", textTransform:"uppercase", letterSpacing:"1px", marginBottom:8 }}>Daily Protein</div>
                 <div style={{ display:"flex", alignItems:"baseline", gap:8, marginBottom:6 }}>
-                  <div style={{ fontSize:52, fontFamily:"'Oswald',sans-serif", fontWeight:700, color:"#ffcd68", lineHeight:0.85, letterSpacing:"-2.5px" }}>{results.proteinMinG}–{results.proteinMaxG}</div>
-                  <div style={{ fontSize:20, fontFamily:"'Oswald',sans-serif", fontWeight:600, color:"#BF994C", textTransform:"uppercase", letterSpacing:"-0.5px" }}>g / day</div>
+                  <div style={{ fontSize:52, fontFamily:"'Varet Gothic','Oswald',sans-serif", fontWeight:700, color:"#ffcd68", lineHeight:0.85, letterSpacing:"-2.5px" }}>{results.proteinMinG}–{results.proteinMaxG}</div>
+                  <div style={{ fontSize:20, fontFamily:"'Varet Gothic','Oswald',sans-serif", fontWeight:600, color:"#BF994C", textTransform:"uppercase", letterSpacing:"-0.5px" }}>g / day</div>
                 </div>
                 <div style={{ fontSize:13, color:"#888", marginBottom:16 }}>Based on 1.2–1.6g of protein per kg of bodyweight ({results.weightKg}kg)</div>
                 {results.showAltProtein && (
