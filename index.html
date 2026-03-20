@@ -173,11 +173,11 @@
           }
         } catch(e) { yPos = 100; }
 
-        drawText("INCLUSIVE CALORIE &",  cx, yPos,      { font: "700 52px 'Varet Gothic', Oswald, sans-serif", color: "#ffcd68" }); yPos += 90;
-        drawText("PROTEIN CALCULATOR",   cx, yPos,      { font: "700 52px 'Varet Gothic', Oswald, sans-serif", color: "#BF994C" }); yPos += 90;
+        drawText("INCLUSIVE CALORIE &",  cx, yPos,      { font: "700 52px 'Varet Gothic', Oswald, sans-serif", color: "#ffcd68" }); yPos += 68;
+        drawText("PROTEIN CALCULATOR",   cx, yPos,      { font: "700 52px 'Varet Gothic', Oswald, sans-serif", color: "#BF994C" }); yPos += 68;
 
         ctx.strokeStyle = "rgba(191,153,76,0.3)"; ctx.lineWidth = 1;
-        ctx.beginPath(); ctx.moveTo(cx-200, yPos); ctx.lineTo(cx+200, yPos); ctx.stroke(); yPos += 80;
+        ctx.beginPath(); ctx.moveTo(cx-200, yPos); ctx.lineTo(cx+200, yPos); ctx.stroke(); yPos += 60;
 
         const summaryItems = [
           ["GOAL",   results.goalLabel.toUpperCase(), results.goalColor],
@@ -188,7 +188,7 @@
         summaryItems.forEach(([label, val, color], i) => {
           drawText(label, colW*i+colW/2, yPos,    { font: "700 22px Lato, sans-serif", color: "#888" });
           drawText(val,   colW*i+colW/2, yPos+36, { font: "700 30px 'Varet Gothic', Oswald, sans-serif", color });
-        }); yPos += 130;
+        }); yPos += 100;
 
         const boxW = (w-120)/2;
         drawRoundedRect(50,         yPos, boxW, 130, 16, "rgba(255,255,255,0.04)", "rgba(255,255,255,0.08)");
@@ -198,18 +198,18 @@
         drawText("calories at rest",     50+boxW/2,         yPos+110, { font: "400 20px Lato, sans-serif",   color: "#888" });
         drawText("TDEE",                 50+boxW+20+boxW/2, yPos+35,  { font: "700 20px Lato, sans-serif",   color: "#fff" });
         drawText(results.tdee.toLocaleString(), 50+boxW+20+boxW/2, yPos+80,  { font: "700 48px 'Varet Gothic', Oswald, sans-serif", color: "#ffcd68" });
-        drawText("maintenance calories", 50+boxW+20+boxW/2, yPos+110, { font: "400 20px Lato, sans-serif",   color: "#888" }); yPos += 190;
+        drawText("maintenance calories", 50+boxW+20+boxW/2, yPos+110, { font: "400 20px Lato, sans-serif",   color: "#888" }); yPos += 160;
 
         drawRoundedRect(50, yPos, w-100, 200, 16, results.goalColor+"18", results.goalColor+"35");
         drawText("DAILY CALORIES", cx, yPos+45,  { font: "700 22px Lato, sans-serif",   color: "#fff" });
         drawText(results.minCals.toLocaleString()+" – "+results.maxCals.toLocaleString(), cx, yPos+115, { font: "700 72px 'Varet Gothic', Oswald, sans-serif", color: results.goalColor });
-        drawText("calories per day", cx, yPos+155, { font: "400 24px Lato, sans-serif", color: "#888" }); yPos += 290;
+        drawText("calories per day", cx, yPos+155, { font: "400 24px Lato, sans-serif", color: "#888" }); yPos += 240;
 
         drawRoundedRect(50, yPos, w-100, 240, 16, "rgba(191,153,76,0.1)", "rgba(191,153,76,0.25)");
         drawText("DAILY PROTEIN",  cx, yPos+45,  { font: "700 22px Lato, sans-serif",   color: "#fff" });
         drawText(results.proteinMinG+" – "+results.proteinMaxG, cx, yPos+115, { font: "700 72px 'Varet Gothic', Oswald, sans-serif", color: "#ffcd68" });
         drawText("grams per day",  cx, yPos+155, { font: "400 24px Lato, sans-serif",   color: "#888" });
-        drawText("Based on 1.2–1.6g per kg of bodyweight ("+results.weightKg+"kg)", cx, yPos+200, { font: "400 20px Lato, sans-serif", color: "#888" }); yPos += 290;
+        drawText("Based on 1.2–1.6g per kg of bodyweight ("+results.weightKg+"kg)", cx, yPos+200, { font: "400 20px Lato, sans-serif", color: "#888" }); yPos += 240;
 
         if (results.showAltProtein) {
           drawRoundedRect(50, yPos, w-100, 100, 16, "rgba(191,153,76,0.06)", "rgba(191,153,76,0.15)");
@@ -229,12 +229,12 @@
           }
           ctx.fillText(line1, cx, yPos+38); ctx.fillText(line2, cx, yPos+64);
         } else { ctx.fillText(tipText, cx, yPos+52); }
-        yPos += 150;
+        yPos += 120;
 
         drawText("CARBS & FATS", cx, yPos, { font: "700 22px Lato, sans-serif", color: "#e2e8f0" }); yPos += 34;
         ctx.font = "400 20px Lato, sans-serif"; ctx.fillStyle = "#888";
         ctx.fillText("Fill your remaining calories however you like.", cx, yPos);
-        ctx.fillText("No rigid split required.", cx, yPos+28); yPos += 110;
+        ctx.fillText("No rigid split required.", cx, yPos+28); yPos += 90;
 
         // ── Footer: divider + branding + social ──────────────────────────
         ctx.strokeStyle = "rgba(191,153,76,0.3)"; ctx.lineWidth = 1;
