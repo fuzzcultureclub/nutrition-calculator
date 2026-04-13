@@ -273,7 +273,7 @@
                 <div style={{ width:6, height:6, borderRadius:"50%", background:"#ffcd68", boxShadow:"0 0 8px #ffcd68" }}/>
                 <span style={{ fontSize:12, color:"#ffcd68", fontWeight:700, letterSpacing:1 }}>FCC NUTRITION CALCULATOR</span>
               </div>
-              <h1 style={{ fontFamily:"'Oswald',sans-serif", fontSize:"clamp(26px,5vw,40px)", fontWeight:700, letterSpacing:"-1.5px", lineHeight:0.9, textTransform:"uppercase", background:"linear-gradient(135deg,#ffcd68,#BF994C)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", margin:0 }}>
+              <h1 style={{ fontFamily:"'Varet Gothic','Oswald',sans-serif", fontSize:"clamp(26px,5vw,40px)", fontWeight:700, letterSpacing:"-1.5px", lineHeight:0.9, textTransform:"uppercase", background:"linear-gradient(135deg,#ffcd68,#BF994C)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", margin:0 }}>
                 Inclusive Calorie &<br/>Protein Calculator
               </h1>
               <p style={{ color:"#888", marginTop:10, fontSize:16, fontWeight:700 }}>Personalised range targets based on your body and goals</p>
@@ -386,12 +386,12 @@
               <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:14, marginBottom:16 }}>
                 <div style={s.statBox}>
                   <div style={{ fontSize:12, color:"#ffffff", textTransform:"uppercase", letterSpacing:"1px", marginBottom:6 }}>BMR</div>
-                  <div style={{ fontSize:32, fontFamily:"'Oswald',sans-serif", fontWeight:700, color:"#e2e8f0", lineHeight:0.85, letterSpacing:"-1.5px" }}>{results.bmr.toLocaleString()}</div>
+                  <div style={{ fontSize:32, fontFamily:"'Varet Gothic','Oswald',sans-serif", fontWeight:700, color:"#e2e8f0", lineHeight:0.85, letterSpacing:"-1.5px" }}>{results.bmr.toLocaleString()}</div>
                   <div style={{ fontSize:12, color:"#888", marginTop:4 }}>calories at rest</div>
                 </div>
                 <div style={s.statBox}>
                   <div style={{ fontSize:12, color:"#ffffff", textTransform:"uppercase", letterSpacing:"1px", marginBottom:6 }}>TDEE</div>
-                  <div style={{ fontSize:32, fontFamily:"'Oswald',sans-serif", fontWeight:700, color:"#ffcd68", lineHeight:0.85, letterSpacing:"-1.5px" }}>{results.tdee.toLocaleString()}</div>
+                  <div style={{ fontSize:32, fontFamily:"'Varet Gothic','Oswald',sans-serif", fontWeight:700, color:"#ffcd68", lineHeight:0.85, letterSpacing:"-1.5px" }}>{results.tdee.toLocaleString()}</div>
                   <div style={{ fontSize:12, color:"#888", marginTop:4 }}>maintenance calories</div>
                 </div>
               </div>
@@ -401,7 +401,7 @@
                 <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start" }}>
                   <div>
                     <div style={{ fontSize:12, color:"#ffffff", textTransform:"uppercase", letterSpacing:"1px", marginBottom:6 }}>Daily Calories</div>
-                    <div style={{ fontSize:52, fontFamily:"'Oswald',sans-serif", fontWeight:700, color:results.goalColor, lineHeight:0.85, letterSpacing:"-2.5px" }}>{results.minCals.toLocaleString()}–{results.maxCals.toLocaleString()}</div>
+                    <div style={{ fontSize:52, fontFamily:"'Varet Gothic','Oswald',sans-serif", fontWeight:700, color:results.goalColor, lineHeight:0.85, letterSpacing:"-2.5px" }}>{results.minCals.toLocaleString()}–{results.maxCals.toLocaleString()}</div>
                     <div style={{ fontSize:13, color:"#888", marginTop:6 }}>calories per day</div>
                   </div>
                   <div style={{ background:results.goalColor+"22", color:results.goalColor, border:`1px solid ${results.goalColor}44`, borderRadius:6, padding:"3px 10px", fontSize:11, fontWeight:600, letterSpacing:"0.5px" }}>
@@ -414,8 +414,8 @@
               <div style={{ borderRadius:16, padding:24, background:"linear-gradient(135deg,rgba(191,153,76,0.1),rgba(255,255,255,0.02))", border:"1px solid rgba(191,153,76,0.25)", marginBottom:16 }}>
                 <div style={{ fontSize:12, color:"#ffffff", textTransform:"uppercase", letterSpacing:"1px", marginBottom:8 }}>Daily Protein</div>
                 <div style={{ display:"flex", alignItems:"baseline", gap:8, marginBottom:6 }}>
-                  <div style={{ fontSize:52, fontFamily:"'Oswald',sans-serif", fontWeight:700, color:"#ffcd68", lineHeight:0.85, letterSpacing:"-2.5px" }}>{results.proteinMinG}–{results.proteinMaxG}</div>
-                  <div style={{ fontSize:20, fontFamily:"'Oswald',sans-serif", fontWeight:600, color:"#BF994C", textTransform:"uppercase", letterSpacing:"-0.5px" }}>g / day</div>
+                  <div style={{ fontSize:52, fontFamily:"'Varet Gothic','Oswald',sans-serif", fontWeight:700, color:"#ffcd68", lineHeight:0.85, letterSpacing:"-2.5px" }}>{results.proteinMinG}–{results.proteinMaxG}</div>
+                  <div style={{ fontSize:20, fontFamily:"'Varet Gothic','Oswald',sans-serif", fontWeight:600, color:"#BF994C", textTransform:"uppercase", letterSpacing:"-0.5px" }}>g / day</div>
                 </div>
                 <div style={{ fontSize:13, color:"#888", marginBottom:16 }}>Based on 1.2–1.6g of protein per kg of bodyweight ({results.weightKg}kg)</div>
                 {results.showAltProtein && (
